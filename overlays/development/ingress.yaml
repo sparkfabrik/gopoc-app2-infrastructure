@@ -1,0 +1,18 @@
+---
+# Source: nginx/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gopoc-app2-nginx
+spec:
+  rules:
+    - host: development.app2.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gopoc-app2-nginx
+                port:
+                  name: http

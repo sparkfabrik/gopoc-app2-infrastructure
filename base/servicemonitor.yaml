@@ -1,0 +1,23 @@
+---
+# Source: nginx/templates/servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: gopoc-app2-nginx
+  namespace: kube-prometheus-stack
+  labels:
+    app.kubernetes.io/name: nginx
+    helm.sh/chart: nginx-8.9.0
+    app.kubernetes.io/instance: gopoc-app2
+    app.kubernetes.io/managed-by: Helm
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nginx
+      app.kubernetes.io/instance: gopoc-app2
+  endpoints:
+    - port: metrics
+      path: /metrics
+  namespaceSelector:
+    matchNames:
+      - gopoc-app2
