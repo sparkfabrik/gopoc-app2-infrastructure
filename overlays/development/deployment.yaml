@@ -10,4 +10,4 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: docker.io/aypx/gitops-poc-app-2:develop
+          image: docker.io/aypx/gitops-poc-app-2:develop # {"$imagepolicy": "flux-system:app-application-1"}
