@@ -1,4 +1,3 @@
-# Source: nginx/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -9,4 +8,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: aypx/gitops-poc-app-1:develop-c287195-1620140504 # {"$imagepolicy": "flux-system:app-application-1"}
+        image: aypx/gitops-poc-app-1:develop-c287195-1620140504 # {"$imagepolicy": "flux-system:app-application-2"}
